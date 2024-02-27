@@ -47,8 +47,9 @@ if st.button("Get Comment Analysis"):
                 total += 1
                 if each == "POSITIVE":
                     positives += 1
-            average = round(number=(positives/total), ndigits=2) * 100
-            invAverage = round(number=(1 - average), ndigits=2) * 100
+            average = (positives/total) * 100
+            average = round(average, ndigits=2)
+            invAverage = 100 - average
 
         #Present metrics
         st.success(f"Your video has been successfully analysed")
